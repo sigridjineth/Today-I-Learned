@@ -407,4 +407,4 @@ asyncHello('').then(function(result)){
 14. [함수](https://gist.github.com/qodot/1845fd02f14807d2eee9c58270ff1b2a)
 15. [async/await이 promise보다 좋은 이유](https://ithub.tistory.com/223))
 
-16. [[Async, 비동기와 동기] Promise에서 Await까지]([https://velog.io/@rohkorea86/Promiseis-%EB%B9%84%EB%8F%99%EA%B8%B0%EB%8F%99%EA%B8%B0%EC%97%90%EC%84%9C-Promise%EA%B9%8C%EC%A7%80](https://velog.io/@rohkorea86/Promiseis-비동기동기에서-Promise까지))
+16. [[Async, 비동기와 동기] Promise에서 Await까지](https://velog.io/@rohkorea86/Promiseis-%EB%B9%84%EB%8F%99%EA%B8%B0%EB%8F%99%EA%B8%B0%EC%97%90%EC%84%9C-Promise%EA%B9%8C%EC%A7%80)
