@@ -40,7 +40,7 @@ var friends = ["Mike", "Stacy", "Andy", "Rick"]; friends.forEach(function (eachN
 
 앞서 언급했다시피, 자바스크립트의 모든 것은 객체이다. 함수도 무려 일급객체이므로 함수를 마치 변수처럼 return값으로 사용할 수 있다. 특정 함수를 다른 함수의 인자처럼 사용하려면 함수의 이름만 넘겨주면 된다. 주의해야 할 점은 콜백 함수는 전달된 즉시 실행될 필요가 없다는 점이다. 전달받은 함수 내부에서 전달된 함수는 나중에 호출된다.
 
-[Captain Pangyo]([https://joshua1988.github.io/web-development/javascript/javascript-asynchronous-operation/#%EC%BD%9C%EB%B0%B1-%ED%95%A8%EC%88%98%EB%A1%9C-%EB%B9%84%EB%8F%99%EA%B8%B0-%EC%B2%98%EB%A6%AC-%EB%B0%A9%EC%8B%9D%EC%9D%98-%EB%AC%B8%EC%A0%9C%EC%A0%90-%ED%95%B4%EA%B2%B0%ED%95%98%EA%B8%B0](https://joshua1988.github.io/web-development/javascript/javascript-asynchronous-operation/#콜백-함수로-비동기-처리-방식의-문제점-해결하기)) 에서 콜백함수의 비동기 작동방식에 대해 기깔찬 비유를 했다. 콜백 함수의 동작 방식은 마치 식당의 자리예약과도 같다. 이해를 돕기 위해 강남역 근처에서 근무하는 직장인을 상정해보자. (내 이야기 하는 거 맞다) 
+[Captain Pangyo]([https://joshua1988.github.io/web-development/javascript/javascript-asynchronous-operation/#%EC%BD%9C%EB%B0%B1-%ED%95%A8%EC%88%98%EB%A1%9C-%EB%B9%84%EB%8F%99%EA%B8%B0-%EC%B2%98%EB%A6%AC-%EB%B0%A9%EC%8B%9D%EC%9D%98-%EB%AC%B8%EC%A0%9C%EC%A0%90-%ED%95%B4%EA%B2%B0%ED%95%98%EA%B8%B0](https://joshua1988.github.io/web-development/javascript/javascript-asynchronous-operation/#콜백-함수로-비동기-처리-방식의-문제점-해결하기)) 에서 콜백함수의 비동기 작동방식에 대해 기깔찬 비유를 했다. 콜백 함수의 동작 방식은 마치 식당의 자리예약과도 같다. 이해를 돕기 위해 강남역 근처에서 근무하는 직장인을 상정해보자.
 
 점심에는 어디를 가나 사람이 많다. 대기자 명단에 이름을 쓰고 자리가 났다고 연락이 오기 전까지 다른 식당을 돌아다닌다. 만약 식당에 자리가 생기면 문자로 연락이 온다고 가정하자. 그 문자를 받는 시점이 바로 콜백함수가 호출되는 지점이다. 손님 입장에서는 자리가 나기 전까지 식당에서 기다리지 않고 커피를 마신다던지, 잠시 쇼핑을 하러 갈 수도 있다.
 
