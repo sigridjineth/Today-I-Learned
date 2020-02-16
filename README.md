@@ -1,5 +1,27 @@
 # 데일리 저널 2020
 
+## 2020.02.16
+
+* 오늘은 일찍 저널을 올립니다.
+
+[https://github.com/…/T…/blob/master/Feb%202020/2020.02.16.md](https://github.com/jypthemiracle/This-Week-I-Learned/blob/master/Feb 2020/2020.02.16.md?fbclid=IwAR3Z5FUvEYeS5i4Q2eSwBdWqM8nG7HRTyCBdngkrzQKX-8OgCpPnreoNeRk)
+
+### 학습 사항
+
+* Git의 cherry-pick, rebase 기능을 학습한 후 기존 원격 저장소에서 다른 원격 저장소로 커밋을 푸쉬한 경험을 하였다. --interactive, -p 등 다양한 옵션을 활용하여 희망하던 사항을 달성하였다.
+* 작업이 진행 중인 파일을 관리할 경우 git stash 명령어를 적극 활용하거나 커밋 메시지에서 [WIP] Working in Progress를 활용하는 습관을 연습했다.
+* JUnit 테스트에서 @BeforeEach 어노테이션을 활용하여 클래스 인스턴스를 선언하는 방법을 확실히 인지하였다. private static 변수로 선언하고 이를 받아 setup 메소드서 인스턴스를 new 생성자로 선언한다.
+* [Soomin Darcie Park](https://www.facebook.com/sunny.park.986?fref=gs&__tn__=%2CdK-R-R&eid=ARAgJ7EUVdKQqL5W7E_qx9v3w6JGCdIoyze7f87tvfNd-GJnndU4NaGCWWWXRYG1WScVrBGxrNQcnmSJ&dti=1208547502633070&hc_location=group) 누나와 진행하는 정기 알고리즘 스터디에서 탐욕법에 대해 간단히 살펴보았고, 프로그래머스 체육복 문제를 풀다 말았다. KBS 한국어능력시험 준비가 우선이라(...) 다음 주로 미룬다.
+* 대략적인 풀잇법은 알겠으나, ArrayList에서 forEach 돌릴 시 iterator를 꼭 활용하여야 해당 원소의 이름으로 remove할 수 있을 지 살펴보아야 한다. 추가적으로 언제 iterator를 쓰는 건지? stream과의 차이점 또는 차별점은 무엇인지? 학습하여야 한다.
+
+### 2020.02.15
+
+* 고등학교 동아리에서 GitHub Classroom을 활용한 학습경험을 설계하고 있다. 국내 공교육에서 Git을 사용하는 최초의 사례가 아닐까하며 설레고 있다.
+* 많은 학생들이 여러 교육기관을 떠도는 경향이 있음을 확인하고, 교육기관이 mock할 수 있는 실무경험의 범위와 학생들이 갖는 두려움, 어려움 그리고 취업시장에서의 여러 이슈 등에 대한 토론을 가졌다.
+* 군대 가는 데 너무 일상생활이 방해될 정도로 리소스가 많이 쓰인다. 너무 지쳐서 나도 모르게 잠이 들어있다. 조금이라도 어긋나면 추후 계획이 어그러질 것만 같은 불안감에 휩싸여 있다.
+
+
+
 ## 2020.02.14
 
 설날 이후에 소홀해졌습니다. 오늘부터 다시 작성합니다 :)
