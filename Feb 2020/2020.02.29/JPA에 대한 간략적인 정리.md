@@ -159,6 +159,37 @@ public class Category {
   private List<Book> books = new ArrayList<Book>();
   ```
 
+### 더티 체킹에 대한 간단한 정리
+
+* 일단 엔티티 매니저가 엔티티를 저장하고 조회하고 수정하고 삭제한다.
+* 그런데 엔티티 매니저의 메소드에는 persist, find, delete 따위의 쿼리를 날리지 않아도 된다.
+* 예를 들어 지난 java-qna step2의 경우에는 PostsService의 update 메소드에서 쿼리를 날리는 부분이 없다.
+* 영속성 컨텍스트에 엔티티가 담겨있는 상태에서는 @Transactional 어노테이션이 붙은 경우 트랜잭션이 모두 끝난 경우 데이터베이스에 수정분을 반영한다고 한다.
+  * 데이터베이스에 변경 데이터를 저장하는 시점은 1) Transaction commit 시점 2) EntityManager flush 시점 3) JPQL 사용 시점이라고 한다.
+* 즉, Entity 객체에 수정만 가하면 DB에 알아서 추가가 된다는 아주 신기한 마법.
+  * Dirt - 즉, 더러운 부분 - 이 바로 엔티티 데이터의 변경된 부분이다.
+* 더티 체킹이 이루어지기 위해서는 다음 두 가지 조건이 필요하다.
+  * Managed 상태에 있는 엔티티여야 하고
+  * (서비스 레이어에서) @Transactional 어노테이션을 활용하여 트랜잭션 안에서 엔티티를 변경하는 경우여야 한다.
+* @Transactional이 어떻게 작동하는가?
+  * Table: Posts에서 PK id 값이 (예를 들어) 1인 Posts 엔티티 객체를 조회한다.
+  * Posts의 내용을 변경한다.
+  * JPA는 엔티티 조회 시점의 스냅샷을 보유하고 있다고 한다. 이것과 변경내용을 비교해서 변경이 있을 경우 DB에 commit을 한다. 이 때 @Transactional 에서 이루어진 쿼리를 동시에 커밋한다.
+    * 질문: JPA는 언제 엔티티를 조회하는가?
+
+```java
+@Transactional
+  public Long update(Long id, PostsUpdateRequestDto requestDto) {
+    Posts posts = postsRepository.findById(id).orElseThrow(
+        () -> new IllegalArgumentException("no such post." + " id = " + id));
+    posts.update(requestDto.getTitle(), requestDto.getContent());
+    return id;
+  }
+```
+
+* 트랜잭션 커밋 이후, 트랜잭션이 끝나는 시점에 모든 엔티티에 대한 정보를 DB에 반영한다.
+  * 트랜잭션이 아닌 상태에서 엔티티 내용이 변경되는 경우
+
 ## Reference
 
 * https://en.m.wikibooks.org/wiki/Java_Persistence/What_is_Java_persistence%3F
