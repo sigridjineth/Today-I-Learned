@@ -4,7 +4,8 @@
 
 ## Pages
 
-* 읽을 거리 정리 모음: [구글 닥스 링크](https://docs.google.com/spreadsheets/d/1G1oGyUiB1SHuDeR1-keJYvGJWhT7eRTRKcr3E71qvik/edit#gid=1404562788)
-* 데일리 저널: [마크다운 바로 가기](/DailyJournal.md)
+* 읽을 거리 정리 모음: [구글 닥스 링크](https://docs.google.com/spreadsheets/d/1G1oGyUiB1SHuDeR1-keJYvGJWhT7eRTRKcr3E71qvik/edit?usp=sharing)
+* 데일리 저널: [마크다운 바로 가기](/DailyJournal)
 * 데일리 스크럼: [깃헙 이슈 바로 가기](https://github.com/jypthemiracle/This-Week-I-Learned/issues)
+* 영어 단어 매일 암기하기: [구글 닥스 링크](https://docs.google.com/spreadsheets/d/1YCbbnzqDXjABGe5MY7VLa24FJDm09zbQBd_SVm1Vl6s/edit?usp=sharing)
 
