@@ -48,3 +48,74 @@
 #### 결론
 
 ![](https://i.imgur.com/9pXD6ZI.png)
+
+### 코드
+```
+kruskal = () => {
+    [v, e] = window.prompt().split(" ").map((element) => Number(element));
+    let parent = new Array(v+1).fill(0);
+    edges = [];
+    result = 0;
+    for (let i = 1; i < v+1; i++) {
+        parent[i] = i;
+    };
+    for (let i = 0; i < e; i++) {
+        [a, b, cost] = window.prompt().split(" ").map((element) => Number(element));
+        edges.push({
+            cost: cost,
+            a: a,
+            b: b
+        }); // 비용 순으로 정렬하기 위하여 비용을 첫 번째 원소로 설정
+    };
+
+    sort(edges, 0, edges.length-1);
+
+    for (let edge of edges) {
+        cost = edge.cost;
+        a = edge.a;
+        b = edge.b;
+        // 싸이클이 발생하지 않는 경우에만 집합을 포함
+        if (find_parent(parent,a) != find_parent(parent, b)) {
+            union_parent(parent, a, b);
+            result = result + cost;
+        };
+    };
+
+    return result;
+};
+
+// 퀵 소트를 이용하여 정렬하였다.
+sort = (array, start, end) => {
+    // 원소가 1개일 때는 종료한다.
+    if (start >= end) {
+        return;
+    };
+    // 피벗은 첫 번째 원소이다.
+    let pivot = start;
+    let left = start + 1;
+    let right = end;
+    // 1단계를 수행한다.
+    while (left <= right) {
+        // 피벗보다 더 큰 데이터를 찾을 때까지 반복한다.
+        while ((left <= end) && (array[left] < array[pivot])) {
+            left = left + 1;
+        };
+        // 피벗보다 더 작은 데이터를 찾을 때까지 반복한다.
+        while ((right > start) && (array[right] >= array[pivot])) {
+            right = right - 1;
+        };
+        // 만약 엇갈렸다면, 작은 데이터와 피벗을 서로 교체한다. Divide(분할)
+        if (left > right) {
+            let tempSmallData = array[right];
+            array[right] = array[pivot];
+            array[pivot] = tempSmallData;
+        } else { // 엇갈리지 않았다면 작은 데이터와 큰 데이터를 교체
+            let tempBigData = array[left];
+            array[left] = array[right];
+            array[right] = tempBigData;
+        }
+    };
+    sort(array, start, right - 1);
+    sort(array, right + 1, end);
+};
+```
