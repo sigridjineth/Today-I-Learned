@@ -50,7 +50,7 @@
 ![](https://i.imgur.com/9pXD6ZI.png)
 
 ### 코드
-```
+```javascript
 kruskal = () => {
     [v, e] = window.prompt().split(" ").map((element) => Number(element));
     let parent = new Array(v+1).fill(0);
